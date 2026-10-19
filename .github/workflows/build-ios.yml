@@ -72,6 +72,7 @@ jobs:
         run: |
           chmod +x Scripts/fetch_llama_xcframework.sh
           ./Scripts/fetch_llama_xcframework.sh
+                    python3 -c 'from pathlib import Path; p=Path("JiuziAISecretary.xcodeproj/project.pbxproj"); s=p.read_text(); s=s.replace("outputPaths = (\"$(SRCROOT)/iOS/Frameworks/llama.xcframework/Info.plist\",);", "outputPaths = ();"); p.write_text(s)'
           xcodebuild \
             -project JiuziAISecretary.xcodeproj \
             -scheme JiuziAISecretary \
