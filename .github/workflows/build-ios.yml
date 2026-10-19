@@ -70,6 +70,8 @@ jobs:
       - name: Build unsigned iPhone app
         working-directory: source
         run: |
+          chmod +x Scripts/fetch_llama_xcframework.sh
+          ./Scripts/fetch_llama_xcframework.sh
           xcodebuild \
             -project JiuziAISecretary.xcodeproj \
             -scheme JiuziAISecretary \
